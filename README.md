@@ -14,3 +14,20 @@ js:  rem是根据html的font-size决定，根据不同屏幕来设置它的font-
      let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth
      let htmlDom = document.getElementsByTagName('html')[0]
      htmlDom.style.fontSize = htmlWidth / 10 + 'px'
+     
+scss:
+
+      @function px2rem($px){
+       $rem: 37.5px;
+       @return ($px / $rem) + rem;
+     }
+
+     .hello{
+       width:px2rem(100px);
+       height:px2rem(100);
+       &.b{
+         width:px2rem(50px);
+         height:px2rem(50px);
+       }
+     }
+
